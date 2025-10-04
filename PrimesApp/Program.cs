@@ -1,13 +1,21 @@
 ﻿namespace PrimesApp
 {
     /// <summary>
-    /// Calculates if a number is Prime.
+    /// Calculates all prime numbers in a specific range (ex. from 1 to 20).
     /// </summary>
     internal class Program
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 20; i++)
+            int lowerRange, upperRange;
+
+            Console.WriteLine("Please give the range: ");
+            lowerRange = int.Parse(Console.ReadLine()!);
+            upperRange = int.Parse(Console.ReadLine()!);
+
+            Console.WriteLine($"Calculating all Prime numbers from {lowerRange} to {upperRange}");
+
+            for (int i = lowerRange; i <= upperRange; i++)
             {
                 if (isPrime(i))
                 {
