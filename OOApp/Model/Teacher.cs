@@ -14,16 +14,18 @@ namespace OOApp.Model
         public int Id { get; set; }
         public string? Firstname { get; set; }
         public string? Lastname { get; set; }
+        public SchoolType SchoolType { get; set; }  
 
         public Teacher()
         {
         }
 
-        public Teacher(int id, string? firstname, string? lastname)
+        public Teacher(int id, string? firstname, string? lastname, SchoolType schoolType)
         {
             Id = id;
             Firstname = firstname;
             Lastname = lastname;
+            SchoolType = schoolType;
         }
 
         // Also called virtual methods (overridable methods)
@@ -37,7 +39,8 @@ namespace OOApp.Model
             return obj is Teacher teacher &&
                    Id == teacher.Id &&
                    Firstname == teacher.Firstname &&
-                   Lastname == teacher.Lastname;
+                   Lastname == teacher.Lastname &&
+                   SchoolType == teacher.SchoolType;
         }
 
         public override int GetHashCode()
