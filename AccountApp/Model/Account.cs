@@ -47,7 +47,8 @@ namespace AccountApp.Model
             {
                 if (amount < 0) throw new NegativeAmountException("Error. Amount must not be negative.");
                 Balance += amount;
-            } catch (NegativeAmountException e) 
+            }
+            catch (NegativeAmountException e)
             {
                 Console.WriteLine(e.StackTrace);
             }
@@ -68,7 +69,8 @@ namespace AccountApp.Model
                 if (amount > Balance) throw new InsufficientBalanceException("Error. Balance is insufficient.");
 
                 Balance -= amount;
-            } catch(NegativeAmountException e) 
+            }
+            catch (NegativeAmountException e)
             {
                 Console.WriteLine(e.StackTrace);
             }
@@ -81,5 +83,6 @@ namespace AccountApp.Model
                 Console.WriteLine(e.StackTrace);
             }
 
+        }
     }
 }
